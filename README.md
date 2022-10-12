@@ -2,7 +2,11 @@
 
 ## Name: Quiz Hero
 
-# Featurees
+## Description
+
+\*This is a Modern Dynamic React website. It has topic wise section and topi wise unique quizes.
+
+## feature's
 
 - Dynamic Quiz Data
 - Hot Reload Feature
