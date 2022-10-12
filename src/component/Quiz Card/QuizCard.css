@@ -21,15 +21,17 @@
   }
 }
 
-.correct-answer {
-  border: 2px solid #008817;
-  cursor: disable;
-}
-
 svg {
   position: absolute;
   width: 1.5rem;
   height: 1.5rem;
-  right: 5%;
+  right: 2%;
   cursor: pointer;
+}
+
+@media screen  and ( max-width:576px){
+  svg{
+    bottom: 0;
+    left: 50% ;
+  }
 }

@@ -5,13 +5,40 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const QuizCard = ({ quizInfo }) => {
-  const { question, options, correctAnswer } = quizInfo;
+  const { id, question, options, correctAnswer } = quizInfo;
+  console.log(quizInfo);
 
   const diffToast = () => {
     toast.success("Answer: " + correctAnswer, {
       position: "top-center",
     });
   };
+
+  function isCorrect(event) {
+    const selected = event.target;
+    selected.style.backgroundColor = "#67b8ff";
+    selected.style.color = "#fff";
+
+    const selectedValue = selected.innerText;
+    const correctAnswer = id;
+    console.log(selectedValue);
+    console.log(id);
+
+    if (selectedValue === correctAnswer) {
+      alert("correct");
+      toast.success("Congrats, Your answer is right", {
+        position: "top-center",
+      });
+      selected.style.backgroundColor = "green";
+      selected.style.border = "green";
+    } else {
+      toast.error("oops, Your answer is wrong", {
+        position: "top-center",
+      });
+      selected.style.backgroundColor = "red";
+      selected.style.border = "red";
+    }
+  }
 
   return (
     <div className="mt-5 p-2 p-sm-5 border border-2 text-start position-relative">
@@ -39,12 +66,23 @@ const QuizCard = ({ quizInfo }) => {
         <p className="fw-bold text-primary">Question: {question}</p>
         <div>
           <p className="fw-semibold">select answer:</p>
-          <div className="choice">
+          <div className="choice pb-4">
             {options.map((choice, idx) => (
-              <QuizeChoice key={idx} choice={choice}></QuizeChoice>
+              <QuizeChoice
+                key={idx}
+                choice={choice}
+                isCorrect={isCorrect}
+              ></QuizeChoice>
             ))}
           </div>
+          <div>
+            <p id={id} className="d-none">
+              {correctAnswer}
+            </p>
+          </div>
 
+          <ToastContainer />
+          <ToastContainer />
           <ToastContainer />
         </div>
       </div>
