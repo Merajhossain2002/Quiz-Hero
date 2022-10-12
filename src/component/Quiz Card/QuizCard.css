@@ -9,9 +9,9 @@
   cursor: pointer;
 }
 
-.choice p:hover{
-    color: #fff;
-    background-color: #67b8ff;
+.choice p:hover {
+  color: #fff;
+  background-color: #67b8ff;
 }
 
 @media screen and (min-width: 576px) {
@@ -19,4 +19,17 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+}
+
+.correct-answer {
+  border: 2px solid #008817;
+  cursor: disable;
+}
+
+svg {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  right: 5%;
+  cursor: pointer;
 }
