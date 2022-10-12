@@ -1,9 +1,10 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 import QuizSection from "../Quiz-section/QuizSection";
 import "./QuizArea.css";
 
 const QuizArea = () => {
-    
+  const quizes = useLoaderData();
   return (
     <div className="container mt-3">
       <div className="d-md-flex hero-area p-2 rounded">
@@ -21,10 +22,13 @@ const QuizArea = () => {
       </div>
       <div className="mt-2">
         <div>
-          <h1>Total Quiz: </h1>
+          <h1>Total Quizes:{quizes.data.length}</h1>
         </div>
-        {}
-        <QuizSection></QuizSection>
+        <div className="quiz my-3 bg-black p-3">
+          {quizes.data.map((quiz) => (
+            <QuizSection key={quiz.id} quiz={quiz}></QuizSection>
+          ))}
+        </div>
       </div>
     </div>
   );

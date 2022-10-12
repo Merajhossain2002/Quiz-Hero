@@ -1,12 +1,33 @@
-.hero-area{
-    background-color: aliceblue;
+.hero-area {
+  background-color: aliceblue;
 }
 
-@media screen and (min-width:576px) {
-    .hero-area img{
-        width: 50%;
-    }
-    .hero-area > div > p{
-        font-size: 1.3rem;
-    }
+@media screen and (min-width: 576px) {
+  .hero-area img {
+    width: 50%;
+  }
+  .hero-area > div > p {
+    font-size: 1.3rem;
+  }
 }
+
+.quiz {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 576px) {
+  .quiz {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+    .quiz {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+  }
