@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./QuizSection.css"
 
 const QuizSection = ({ quiz }) => {
   const { id, logo, name, total } = quiz;

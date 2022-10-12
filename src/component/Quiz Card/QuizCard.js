@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const QuizCard = ({ quizInfo }) => {
   const { id, question, options, correctAnswer } = quizInfo;
-  console.log(quizInfo);
 
   const diffToast = () => {
     toast.success("Answer: " + correctAnswer, {
@@ -21,8 +20,6 @@ const QuizCard = ({ quizInfo }) => {
 
     const selectedValue = selected.innerText;
     const correctAnswer = id;
-    console.log(selectedValue);
-    console.log(id);
 
     if (selectedValue === correctAnswer) {
       alert("correct");
@@ -49,6 +46,7 @@ const QuizCard = ({ quizInfo }) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
+        className="eye"
       >
         <path
           strokeLinecap="round"

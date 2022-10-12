@@ -27,7 +27,7 @@ const QuizArea = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="position-static fw-bolder"
+                className="arrow"
               >
                 <path
                   strokeLinecap="round"
