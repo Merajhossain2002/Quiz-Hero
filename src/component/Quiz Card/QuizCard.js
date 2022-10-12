@@ -1,12 +1,22 @@
 import React from "react";
 import QuizeChoice from "../QuizChoice/QuizeChoice";
 import "./QuizCard.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const QuizCard = ({ quizInfo }) => {
   const { question, options, correctAnswer } = quizInfo;
+
+  const diffToast = () => {
+    toast.success("Answer: " + correctAnswer, {
+      position: "top-center",
+    });
+  };
+
   return (
     <div className="mt-5 p-2 p-sm-5 border border-2 text-start position-relative">
       <svg
+        onClick={diffToast}
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -34,11 +44,8 @@ const QuizCard = ({ quizInfo }) => {
               <QuizeChoice key={idx} choice={choice}></QuizeChoice>
             ))}
           </div>
-          <div className="correct-answer pt-3 ">
-            <p className="ms-3 fw-semibold">
-              Correct Answer: <span className="fw-bold">{correctAnswer}</span>
-            </p>
-          </div>
+
+          <ToastContainer />
         </div>
       </div>
     </div>
